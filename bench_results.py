@@ -1,7 +1,7 @@
 import subprocess
 
-benches = ['ecs', 'specs', 'trex', 'calx_ecs', 'froggy', 'constellation']
-bench_targets = ['pos_vel', 'parallel']
+benches = ['specs', 'froggy', 'legion', 'tiny_ecs', 'hecs', 'constellation']
+bench_targets = ['pos_vel']
 bench_names = ['build', 'update']
 
 # turns a dictionary into a 2d array

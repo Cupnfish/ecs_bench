@@ -2,17 +2,18 @@
 name = "ecs_bench"
 version = "0.1.0"
 authors = ["Lukas Schmierer <lukas.schmierer@lschmierer.de>"]
+edition = "2018"
 
 [dependencies]
-serde_derive = "0.9"
-serde = "0.9"
 
 [dev-dependencies]
-ecs = "0.23.1"
 rayon = "0.8"
-specs = "0.10"
-recs = "2.0.1"
-trex = "0.2.0"
-calx-ecs = "0.5"
-froggy = "0.3"
-constellation = "0.2"
+specs = "0.10" # recently updated
+froggy = "0.4.4" # 2 years old
+constellation = "0.2" # 3 years old
+tiny_ecs = "0.19"
+legion = "0.2.1"
+
+[dev-dependencies.hecs]
+version = "0.2.7"
+features = ["macros"]

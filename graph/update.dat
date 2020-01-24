@@ -1,7 +1,7 @@
- update pos_vel_update parallel_update
- ecs 324 29 3644 74
- specs 3 0 87 1
- trex 179 2 379 11
- calx_ecs 18 0 76 1
- froggy 8 0 73 2
- constellation 8 0 152 13
+ update pos_vel_update
+ specs 3 0
+ froggy 8 0
+ legion 1 0
+ tiny_ecs 9 0
+ hecs 4 0
+ constellation 6 1

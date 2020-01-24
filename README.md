@@ -7,12 +7,12 @@ Benchmarks are located in `benches/[bench_name]_[ecs_crate_name].rs`.
 
  Library         | pos_vel build                 | pos_vel update                 | parallel build                 | parallel update
  --------------- |:-----------------------------:|:------------------------------:|:------------------------------:|:--------------------------------:
- [calx-ecs]      | 228 µs/iter (+/- 7)      | 18 µs/iter (+/- 0)      | 385 µs/iter (+/- 18)      | 76 µs/iter (+/- 1)
- [constellation] | 280 µs/iter (+/- 8) | 8 µs/iter (+/- 0) | 455 µs/iter (+/- 6) | 152 µs/iter (+/- 13)
- [ecs]           | 1,452 µs/iter (+/- 39)           | 324 µs/iter (+/- 29)           | 1,380 µs/iter (+/- 29)           | 3,644 µs/iter (+/- 74)
- [froggy]        | 589 µs/iter (+/- 10)        | 8 µs/iter (+/- 0)        | 1,429 µs/iter (+/- 65)        | 73 µs/iter (+/- 2)
- [specs]         | 261 µs/iter (+/- 7)         | 3 µs/iter (+/- 0)         | 675 µs/iter (+/- 88)         | 87 µs/iter (+/- 1)
- [trex]          | 1,094 µs/iter (+/- 81)          | 179 µs/iter (+/- 2)          | 1,637 µs/iter (+/- 172)          | 379 µs/iter (+/- 11)
+ [calx-ecs]      | {pos_vel_build_calx_ecs}      | {pos_vel_update_calx_ecs}      | {parallel_build_calx_ecs}      | {parallel_update_calx_ecs}
+ [constellation] | 222 µs/iter (+/- 24) | 6 µs/iter (+/- 1) | {parallel_build_constellation} | {parallel_update_constellation}
+ [ecs]           | {pos_vel_build_ecs}           | {pos_vel_update_ecs}           | {parallel_build_ecs}           | {parallel_update_ecs}
+ [froggy]        | 302 µs/iter (+/- 23)        | 8 µs/iter (+/- 0)        | {parallel_build_froggy}        | {parallel_update_froggy}
+ [specs]         | 307 µs/iter (+/- 29)         | 3 µs/iter (+/- 0)         | {parallel_build_specs}         | {parallel_update_specs}
+ [trex]          | {pos_vel_build_trex}          | {pos_vel_update_trex}          | {parallel_build_trex}          | {parallel_update_trex}
 
 [calx-ecs]: https://github.com/rsaarelm/calx-ecs
 [constellation]: https://github.com/TomGillen/constellation/
