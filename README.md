@@ -1,18 +1,25 @@
 # Benchmarks of various Rust Entity Component Systems
 
+**Notes:**
+
+- if a bench is written in the idiomatic way for an ECS, please let me know
+- there will be more benches added soon
+- the old parallel benches have been removed for now
+- some older ECS that have not seen maintenance in over 3+ years are removed
+
 ## Benchmarks
 Benchmarks are run on [Travis CI](https://travis-ci.org/lschmierer/ecs_bench/).
 
 Benchmarks are located in `benches/[bench_name]_[ecs_crate_name].rs`.
 
- Library         | pos_vel build                 | pos_vel update                 | parallel build                 | parallel update
- --------------- |:-----------------------------:|:------------------------------:|:------------------------------:|:--------------------------------:
- [legion]        | 1,353 µs/iter (+/- 50)        | 1 µs/iter (+/- 0)        | {parallel_build_legion}        | {parallel_update_legion}
- [tiny_ecs]      | 266 µs/iter (+/- 24)      | 9 µs/iter (+/- 0)      | {parallel_build_tiny_ecs}      | {parallel_update_tiny_ecs}
- [hecs]          | 383 µs/iter (+/- 20)          | 4 µs/iter (+/- 0)          | {parallel_build_hecs}          | {parallel_update_hecs}
- [specs]         | 311 µs/iter (+/- 15)         | 3 µs/iter (+/- 0)         | {parallel_build_specs}         | {parallel_update_specs}
- [froggy]        | 304 µs/iter (+/- 14)        | 9 µs/iter (+/- 0)        | {parallel_build_froggy}        | {parallel_update_froggy}
- [constellation] | 222 µs/iter (+/- 15) | 6 µs/iter (+/- 0) | {parallel_build_constellation} | {parallel_update_constellation}
+ Library         | pos_vel build                 | pos_vel update                 |
+ --------------- |:-----------------------------:|:------------------------------:|
+ [legion]        | 538 µs/iter (+/- 83)        | 1 µs/iter (+/- 0)        |
+ [tiny_ecs]      | 290 µs/iter (+/- 9)      | 10 µs/iter (+/- 0)      |
+ [hecs]          | 375 µs/iter (+/- 34)          | 4 µs/iter (+/- 0)          |
+ [specs]         | 319 µs/iter (+/- 27)         | 3 µs/iter (+/- 0)         |
+ [froggy]        | 307 µs/iter (+/- 10)        | 9 µs/iter (+/- 0)        |
+ [constellation] | 226 µs/iter (+/- 29) | 6 µs/iter (+/- 0) |
 
 [legion]: https://github.com/jaynus/legion
 [constellation]: https://github.com/TomGillen/constellation/
@@ -32,12 +39,7 @@ Visualization of benchmarks, smaller is better.
  * stub `render` system
  * `physics` system: `position += velocity`
 
-### parallel
- * 10000 entities with 3 simple components `R`, `W1` and `W2`
- * `w1` system reads `R` and writes to `W1`
- * `w2` system reads `R` and writes to `W2`
- * systems could be run in parallel
 
 ## Notes
- * the benchmarks explore a limited subset of ECS use-cases and do not necessarily reflect the peformance of large-scale applications
+ * the benchmarks explore a limited subset of ECS use-cases and do not necessarily reflect the performance of large-scale applications
  * [froggy](https://github.com/kvark/froggy) is technically not an ECS, but a Component Graph System (CGS)

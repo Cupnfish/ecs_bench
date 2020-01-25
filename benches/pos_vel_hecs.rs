@@ -1,9 +1,9 @@
 #![feature(test)]
 extern crate test;
 
+use ecs_bench::pos_vel::{Position, Velocity, N_POS, N_POS_VEL};
+use hecs::{Bundle, MissingComponent, World};
 use test::Bencher;
-use ecs_bench::pos_vel::{Position, Velocity, N_POS_PER_VEL, N_POS};
-use hecs::{World, Bundle, MissingComponent};
 
 #[derive(Bundle)]
 struct PosVel {
@@ -19,14 +19,16 @@ struct Pos {
 fn build() -> World {
     let mut world = World::new();
 
-    for i in 0..N_POS {
-        if i % N_POS_PER_VEL == 0 {
-            world.spawn(PosVel {
-                pos: Position { x: 0.0, y: 0.0 }, vel: Velocity { dx: 0.0, dy: 0.0 }});
-        } else {
-            world.spawn(Pos {
-                pos: Position { x: 0.0, y: 0.0 }});
-        }
+    for _ in 0..N_POS - N_POS_VEL {
+        world.spawn(Pos {
+            pos: Position { x: 0.0, y: 0.0 },
+        });
+    }
+    for _ in 0..N_POS_VEL {
+        world.spawn(PosVel {
+            pos: Position { x: 0.0, y: 0.0 },
+            vel: Velocity { dx: 1.0, dy: 1.0 },
+        });
     }
     world
 }

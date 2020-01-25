@@ -7,9 +7,11 @@ extern crate specs;
 
 extern crate ecs_bench;
 
-use specs::{World, Entity, Component, Join, ReadStorage, RunNow, System, VecStorage, WriteStorage};
+use specs::{
+    Component, Entity, Join, ReadStorage, RunNow, System, VecStorage, World, WriteStorage,
+};
 
-use ecs_bench::pos_vel::{Position, Velocity, N_POS_PER_VEL, N_POS};
+use ecs_bench::pos_vel::{Position, Velocity, N_POS, N_POS_VEL_MODULUS};
 
 struct PosComp(Position);
 impl Component for PosComp {
@@ -46,8 +48,8 @@ fn build() -> (World, VelSys) {
 
         for (i, e) in ents.iter().enumerate() {
             positions.insert(*e, PosComp(Position { x: 0.0, y: 0.0 }));
-            if i % N_POS_PER_VEL == 0 {
-                velocities.insert(*e, VelComp(Velocity { dx: 0.0, dy: 0.0 }));
+            if i % N_POS_VEL_MODULUS == 0 {
+                velocities.insert(*e, VelComp(Velocity { dx: 1.0, dy: 1.0 }));
             }
         }
     }

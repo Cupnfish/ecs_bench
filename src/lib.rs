@@ -1,9 +1,13 @@
 pub mod pos_vel {
 
     /// Entities with velocity and position component.
-    pub const N_POS_PER_VEL: usize = 10;
+    /// Used to insert in staggered order
+    pub const N_POS_VEL_MODULUS: usize = 10;
 
-    /// Entities with position component only.
+    /// Entities with position and velocity component
+    pub const N_POS_VEL: usize = 1000;
+
+    /// Entities with position component only
     pub const N_POS: usize = 10000;
 
     #[derive(Copy, Clone, Debug, PartialEq)]
@@ -17,7 +21,6 @@ pub mod pos_vel {
         pub dx: f32,
         pub dy: f32,
     }
-
 }
 
 pub mod parallel {
