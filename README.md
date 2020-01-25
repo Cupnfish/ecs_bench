@@ -7,19 +7,19 @@ Benchmarks are located in `benches/[bench_name]_[ecs_crate_name].rs`.
 
  Library         | pos_vel build                 | pos_vel update                 | parallel build                 | parallel update
  --------------- |:-----------------------------:|:------------------------------:|:------------------------------:|:--------------------------------:
- [calx-ecs]      | {pos_vel_build_calx_ecs}      | {pos_vel_update_calx_ecs}      | {parallel_build_calx_ecs}      | {parallel_update_calx_ecs}
- [constellation] | 222 µs/iter (+/- 24) | 6 µs/iter (+/- 1) | {parallel_build_constellation} | {parallel_update_constellation}
- [ecs]           | {pos_vel_build_ecs}           | {pos_vel_update_ecs}           | {parallel_build_ecs}           | {parallel_update_ecs}
- [froggy]        | 302 µs/iter (+/- 23)        | 8 µs/iter (+/- 0)        | {parallel_build_froggy}        | {parallel_update_froggy}
- [specs]         | 307 µs/iter (+/- 29)         | 3 µs/iter (+/- 0)         | {parallel_build_specs}         | {parallel_update_specs}
- [trex]          | {pos_vel_build_trex}          | {pos_vel_update_trex}          | {parallel_build_trex}          | {parallel_update_trex}
+ [legion]        | 1,353 µs/iter (+/- 50)        | 1 µs/iter (+/- 0)        | {parallel_build_legion}        | {parallel_update_legion}
+ [tiny_ecs]      | 266 µs/iter (+/- 24)      | 9 µs/iter (+/- 0)      | {parallel_build_tiny_ecs}      | {parallel_update_tiny_ecs}
+ [hecs]          | 383 µs/iter (+/- 20)          | 4 µs/iter (+/- 0)          | {parallel_build_hecs}          | {parallel_update_hecs}
+ [specs]         | 311 µs/iter (+/- 15)         | 3 µs/iter (+/- 0)         | {parallel_build_specs}         | {parallel_update_specs}
+ [froggy]        | 304 µs/iter (+/- 14)        | 9 µs/iter (+/- 0)        | {parallel_build_froggy}        | {parallel_update_froggy}
+ [constellation] | 222 µs/iter (+/- 15) | 6 µs/iter (+/- 0) | {parallel_build_constellation} | {parallel_update_constellation}
 
-[calx-ecs]: https://github.com/rsaarelm/calx-ecs
+[legion]: https://github.com/jaynus/legion
 [constellation]: https://github.com/TomGillen/constellation/
-[ecs]: https://github.com/HeroesGrave/ecs-rs
+[hecs]: https://github.com/Ralith/hecs/
 [froggy]: https://github.com/kvark/froggy
 [specs]: https://github.com/slide-rs/specs
-[trex]: https://github.com/rcolinray/trex
+[tiny_ecs]: https://gitlab.com/flukejones/tiny_ecs/
 
 
 Visualization of benchmarks, smaller is better.
